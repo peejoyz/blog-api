@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Commentschema = new mongoose.Schema({
-	comment:{
+	comment: {
         type: String
     },
 	blog_id: { 

@@ -34,7 +34,7 @@ exports.getAllBlog = async (req, res) => {
 		if (req.query.author_id) {
 			query.push({
 				$match: {
-					created_by: mongoose.Types.ObjectId(req.query.author_id),
+					author: mongoose.Types.ObjectId(req.query.author_id),
 				}
 			});
 		}

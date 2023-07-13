@@ -28,7 +28,15 @@ exports.create = async (req, res) => {
 				});
 
 				let commentData = await newCommentDocument.save();
-                let query = [
+                
+				await Blog.updateOne(
+					{_id:blog_id},
+					{
+						$push: { comments :commentData._id  } 
+					}
+				)
+
+				let query = [
                     {
                         $lookup:
                         {
